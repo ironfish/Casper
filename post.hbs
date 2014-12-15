@@ -20,7 +20,9 @@
         <header class="post-header">
             <h1 class="post-title">{{title}}</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> 
+                <br/>
+                <span class="icon-tags">{{tags prefix=" "}}</span>
             </section>
         </header>
 
@@ -43,13 +45,16 @@
                 <h4><a href="{{url}}">{{name}}</a></h4>
 
                 {{#if bio}}
-                    <p>{{bio}}</p>
+                    <p>Work @ <a href="http://www.typesafe.com/">Typesafe</a>. Love my Wife, Akka, Scala and the Great Outdoors.</p>
                 {{else}}
                     <p>Read <a href="{{url}}">more posts</a> by this author.</p>
                 {{/if}}
                 <div class="author-meta">
                     {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
                     {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+                    <span class="icon-github"><a href="https://github.com/ironfish">/ironfish</a></span>
+                    <span class="icon-twitter"><a href="https://twitter.com/ironfish">@ironfish</a></span>
+                    <span class="icon-book"><a href="http://manning.com/devore/?a_aid=ironfish&a_bid=39e254aa">manning/devore</a></span>
                 </div>
             </section>
 

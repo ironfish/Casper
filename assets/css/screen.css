@@ -102,22 +102,22 @@ table { border-collapse: collapse; border-spacing: 0; }
 /* ==========================================================================
    1. Icons - Sets up the icon font and respective classes
    ========================================================================== */
-
+/* Import the font file with the icons in it */
 /* Import the font file with the icons in it */
 @font-face {
-    font-family: "casper-icons";
-    src:url("../fonts/casper-icons.eot");
-    src:url("../fonts/casper-icons.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/casper-icons.woff") format("woff"),
-        url("../fonts/casper-icons.ttf") format("truetype"),
-        url("../fonts/casper-icons.svg#icons") format("svg");
+    font-family: "icomoon02";
+    src:url("../fonts/icomoon02.eot");
+    src:url("../fonts/icomoon02.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/icomoon02.woff") format("woff"),
+        url("../fonts/icomoon02.ttf") format("truetype"),
+        url("../fonts/icomoon02.svg#icomoon02") format("svg");
     font-weight: normal;
     font-style: normal;
 }
 
 /* Apply these base styles to all icons */
 [class^="icon-"]:before, [class*=" icon-"]:before {
-    font-family: "casper-icons", "Open Sans", sans-serif;
+    font-family: "icomoon02", "Open Sans", sans-serif;
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -157,10 +157,24 @@ table { border-collapse: collapse; border-spacing: 0; }
     content: "\f607";
     margin-left: -3px; /* Tracking fix */
 }
-.icon-link:before {
-    content: "\f608";
+.icon-bullhorn:before {
+    content: "\e604";
 }
-
+.icon-book:before {
+    content: "\e600";
+}
+.icon-books:before {
+    content: "\e603";
+}
+.icon-tags:before {
+    content: "\e601";
+}
+.icon-github:before {
+    content: "\e602";
+}
+.icon-linkedin:before {
+    content: "\e605";
+}
 
 /* ==========================================================================
    2. General - Setting up some base styles
@@ -330,7 +344,8 @@ code, tt {
     font-size: 0.85em;
     white-space: pre-wrap;
     border: #E3EDF3 1px solid;
-    background: #F7FAFB;
+    background: #f5f2f0;
+    /*background: #F7FAFB;*/
     border-radius: 2px;
 }
 
@@ -345,7 +360,8 @@ pre {
     font-size: 0.9em;
     white-space: pre;
     overflow: auto;
-    background: #F7FAFB;
+    background: #f5f2f0;
+    /*background: #F7FAFB;*/
     border-radius: 3px;
 }
 
@@ -602,6 +618,7 @@ margin on the iframe, cause it breaks stuff. */
     height: 38px;
     padding: 0 20px;
     border: transparent 1px solid;
+    margin-left: 10px;
     color: #9EABB3;
     text-align: center;
     font-size: 12px;
@@ -613,7 +630,35 @@ margin on the iframe, cause it breaks stuff. */
     transition: all ease 0.3s;
 }
 .subscribe-button:before {
-    font-size: 9px;
+    font-size: 12px;
+    margin-right: 6px;
+}
+
+.books-button {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    float: right;
+    height: 38px;
+    padding: 0 20px;
+    border: transparent 1px solid;
+    margin-left: 10px;
+    color: #9EABB3;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 35px;
+    white-space: nowrap;
+    border-radius: 3px;
+    background: rgba(0,0,0,0.1);
+    transition: all ease 0.3s;
+}
+.books-button:before {
+    position: relative;
+    bottom: -2px;
+    font-size: 16px;
+    line-height: 0;
     margin-right: 6px;
 }
 
@@ -632,7 +677,8 @@ margin on the iframe, cause it breaks stuff. */
 }
 .no-cover .main-nav.overlay,
 .no-cover .back-button,
-.no-cover .subscribe-button {
+.no-cover .subscribe-button,
+.no-cover .books-button {
     background: none;
 }
 
@@ -641,7 +687,8 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .main-nav.overlay .back-button,
-.main-nav.overlay .subscribe-button {
+.main-nav.overlay .subscribe-button,
+.main-nav.overlay .books-button {
     border-color: rgba(255,255,255,0.6);
 }
 
@@ -654,7 +701,8 @@ margin on the iframe, cause it breaks stuff. */
 
 /* Add a border to the buttons on hover */
 .back-button:hover,
-.subscribe-button:hover {
+.subscribe-button:hover,
+.books-button:hover {
     border-color: #bfc8cd;
     color: #9EABB3;
 }
@@ -694,7 +742,8 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .no-cover .main-nav.overlay .back-button,
-.no-cover .main-nav.overlay .subscribe-button {
+.no-cover .main-nav.overlay .subscribe-button,
+.no-cover .main-nav.overlay .books-button {
     color: rgba(0,0,0,0.4);
     border-color: rgba(0,0,0,0.3);
 }
@@ -1490,7 +1539,8 @@ body:not(.post-template) .post-title {
     }
 
     .back-button,
-    .subscribe-button {
+    .subscribe-button,
+    .books-button {
         height: 44px;
         line-height: 41px;
         border-radius: 0;
@@ -1498,7 +1548,8 @@ body:not(.post-template) .post-title {
         background: transparent;
     }
     .back-button:hover,
-    .subscribe-button:hover {
+    .subscribe-button:hover,
+    .books-button:hover {
         border-color: #ebeef0;
         color: #2e2e2e;
         background: #ebeef0;
@@ -1508,7 +1559,8 @@ body:not(.post-template) .post-title {
         padding: 0 15px 0 10px;
     }
 
-    .subscribe-button {
+    .subscribe-button,
+    .books-button {
         padding: 0 12px;
     }
 
@@ -1522,12 +1574,14 @@ body:not(.post-template) .post-title {
         background: none;
     }
     .no-cover .main-nav.overlay .back-button,
-    .no-cover .main-nav.overlay .subscribe-button {
+    .no-cover .main-nav.overlay .subscribe-button,
+    .no-cover .main-nav.overlay .books-button {
         border: none;
     }
 
     .main-nav.overlay .back-button,
-    .main-nav.overlay .subscribe-button {
+    .main-nav.overlay .subscribe-button,
+    .main-nav.overlay .books-button {
         border-color: transparent;
     }
 

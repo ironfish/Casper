@@ -19,11 +19,16 @@
         </figure>
         {{/if}}
         <h1 class="author-title">{{name}}</h1>
-        <h2 class="author-bio">{{bio}}</h2>
+        <h2 class="author-bio">Work @ <a href="http://www.typesafe.com/">Typesafe</a>. Love my Wife, Akka, Scala and the Great Outdoors.</h2>
         <div class="author-meta">
-            {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
             {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+            <span class="icon-github"><a href="https://github.com/ironfish">/ironfish</a></span>
+            <span class="icon-twitter"><a href="https://twitter.com/ironfish">@ironfish</a></span>
+            <span class="icon-book"><a href="http://manning.com/devore/?a_aid=ironfish&a_bid=39e254aa">manning/devore</a></span>
+            <br/>
+            {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
             <span class="author-stats"><i class="icon-stats"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
+
         </div>
     </section>
 {{/author}}
